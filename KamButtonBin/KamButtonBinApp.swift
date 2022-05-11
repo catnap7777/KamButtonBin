@@ -11,7 +11,7 @@ import SwiftUI
 struct KamButtonBinApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(buttonModel: ButtonModel())
         }
     }
 }
