@@ -22,6 +22,44 @@ struct DestructiveButtons: View {
       }
       .buttonStyle(.bordered)
       .buttonBorderShape(.capsule)
+      Button(role: .destructive, action: {
+        print("please delete me now...")
+      }) { // new in iOS 15
+        Image(systemName: "trash.circle.fill")
+          .resizable()
+          .frame(width: 50, height: 50)
+          .foregroundColor(.red)
+      }
+      Button(role: .destructive, action: {
+        print("please delete me now...")
+      }) { // new in iOS 15
+        Label("Delete", systemImage: "trash.fill")
+          .font(Font.custom("Arial-BoldMT", size: 25))
+      }
+      .buttonStyle(.borderedProminent)
+      .buttonBorderShape(.capsule)
+      Button(role: .destructive, action: {
+        print("please delete me now...")
+      }) { // new in iOS 15
+        Label("Delete", systemImage: "trash.fill")
+          .font(Font.custom("Arial-BoldMT", size: 25))
+      }
+      .buttonStyle(.bordered)
+      .buttonBorderShape(.capsule)
+      .tint(.teal)
+      Button(role: .destructive, action: {
+        print("please delete me now...")
+      }) { // new in iOS 15
+        Label("Delete", systemImage: "trash.fill")
+          .font(Font.custom("Arial-BoldMT", size: 25))
+          .padding(.vertical, 7)
+          .padding(.horizontal, 12)
+          .background(.indigo)
+          .foregroundColor(.white)
+      }
+      .clipShape(RoundedRectangle(cornerRadius: 25))
+
+      
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)

@@ -16,7 +16,7 @@ struct TintedButtons: View {
         .padding(.bottom, 50)
       Button(action: {}, label: {
         Label("Tinted Button1", systemImage: "applelogo")
-          .padding(.all, 5)
+          .padding(.all, 10)
           .foregroundColor(.pink)
       })
       .buttonStyle(.bordered)
@@ -38,6 +38,16 @@ struct TintedButtons: View {
       .buttonStyle(.bordered)
       .buttonBorderShape(.roundedRectangle(radius: 10))
       .tint(.yellow)
+      Button(action: {}, label: {
+        Label("Tinted Button4", systemImage: "ladybug")
+          .padding(.all, 5)
+          .font(Font.custom("ChalkboardSE-bold", size: 18))
+      })
+      .buttonStyle(.bordered)
+      //      .buttonBorderShape(.roundedRectangle(radius: 10))
+      .buttonBorderShape(.capsule)
+      .tint(.purple)
+      .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.purple, lineWidth: 2))
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)

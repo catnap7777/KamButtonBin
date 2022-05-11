@@ -31,6 +31,13 @@ struct MenuButtons: View {
           Label("Rainy Day", systemImage: "cloud.rain")
         }
       }
+      .padding(.top, 10)
+      .padding(.horizontal, 35)
+      .foregroundColor(.white)
+      .font(Font.custom("SavoyeLetPlain", size: 30))
+      .background(.indigo)
+      .clipShape(RoundedRectangle(cornerRadius: 25))
+
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)

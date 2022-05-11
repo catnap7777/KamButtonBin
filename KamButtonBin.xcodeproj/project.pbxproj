@@ -22,6 +22,7 @@
 		3A7FEF28282B4D0300701B42 /* MenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FEF27282B4D0300701B42 /* MenuButtons.swift */; };
 		3A7FEF2A282B4D5A00701B42 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FEF29282B4D5A00701B42 /* Modifiers.swift */; };
 		3A7FEF2C282B4D7300701B42 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FEF2B282B4D7300701B42 /* CustomButtons.swift */; };
+		3A7FEF2E282B559100701B42 /* FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FEF2D282B559100701B42 /* FontNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		3A7FEF27282B4D0300701B42 /* MenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtons.swift; sourceTree = "<group>"; };
 		3A7FEF29282B4D5A00701B42 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		3A7FEF2B282B4D7300701B42 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		3A7FEF2D282B559100701B42 /* FontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				3A7FEF08282B4B6200701B42 /* KamButtonBinApp.swift */,
 				3A7FEF0A282B4B6200701B42 /* ContentView.swift */,
 				3A7FEF16282B4BA000701B42 /* ButtonModel.swift */,
+				3A7FEF2D282B559100701B42 /* FontNames.swift */,
 				3A7FEF18282B4BE400701B42 /* ButtonTypeView */,
 				3A7FEF0C282B4B6600701B42 /* Assets.xcassets */,
 				3A7FEF0E282B4B6600701B42 /* Preview Content */,
@@ -183,6 +186,7 @@
 				3A7FEF1E282B4C4100701B42 /* CapsuleButton.swift in Sources */,
 				3A7FEF0B282B4B6200701B42 /* ContentView.swift in Sources */,
 				3A7FEF2A282B4D5A00701B42 /* Modifiers.swift in Sources */,
+				3A7FEF2E282B559100701B42 /* FontNames.swift in Sources */,
 				3A7FEF22282B4C8500701B42 /* ControlSizedButtons.swift in Sources */,
 				3A7FEF1A282B4C0500701B42 /* ButtonStyles.swift in Sources */,
 				3A7FEF24282B4C9400701B42 /* TintedButtons.swift in Sources */,

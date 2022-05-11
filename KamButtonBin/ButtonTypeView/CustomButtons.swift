@@ -16,7 +16,7 @@ struct MyCustomButton1: ButtonStyle {
       .buttonStyle(.bordered)
       .background(
         LinearGradient(gradient: Gradient(
-          colors: [.orange, .blue, .green]),
+          colors: [.mint, .blue, .indigo]),
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
         // since iOS 13
@@ -47,12 +47,13 @@ struct CustomButtons: View {
         print("Here's my custom button3")
       }
       .buttonStyle(MyCustomButton1())
-      .shadow(color: .purple, radius: 5, x: 15, y: 15)
+      .shadow(color: .green, radius: 5, x: 15, y: 15)
       Button(action: {print("Here's my custom button4")}) {
         Label("Custom Button4", systemImage: "applelogo")
       }
       .buttonStyle(MyCustomButton1())
-      .shadow(color: .yellow, radius: 25, x: 15, y: 15)
+      .shadow(color: .cyan, radius: 25, x: 15, y: 15)
+      .overlay(RoundedRectangle(cornerRadius: 0).stroke(Color.purple, lineWidth: 3))
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)
