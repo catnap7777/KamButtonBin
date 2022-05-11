@@ -23,6 +23,8 @@ struct ContentView: View {
         Picker(selection: $choice4, label: Text("MyPicker")) {
           ForEach(buttonModel.buttons) { item in
             Text("\(item.type)")
+              .font(Font.custom("ChalkboardSE-bold", size: 20))
+              .foregroundColor(Color("subTitleColor"))
           }
         }
         .padding(.bottom, 25)
