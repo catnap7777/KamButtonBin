@@ -14,9 +14,14 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       VStack(spacing: 10.0) {
-        Text("Button Bin")
+        Text("SwiftUI Buttons")
           .foregroundColor(Color("subTitleColor"))
-          .font(Font.custom("ChalkboardSE-bold", size: 45))
+          .font(Font.custom("ChalkboardSE-bold", size: 30))
+        Text("(RW/FSP 5/11/22)")
+        //Text("Button Bin")
+          .foregroundColor(Color("subTitleColor"))
+//          .font(Font.custom("ChalkboardSE-bold", size: 45))
+          .font(Font.custom("ChalkboardSE-bold", size: 25))
         Text("Choose Your Favorite Button")
           .foregroundColor(Color("titleColor"))
           .font(Font.custom("ChalkboardSE-bold", size: 18))
