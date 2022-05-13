@@ -29,6 +29,7 @@ struct Modifiers: View {
           .frame(width: 100, height: 100)
           .clipShape(Circle())
           .overlay(Circle().stroke(Color.purple, lineWidth: 5))
+          //.shadow(color: .pink, radius: 10, x: 25, y: 25) // can have mult. shadows overlaying each other
           .shadow(color: .teal, radius: 55, x: 25, y: 25)
       })
       Button(action: { self.isDisplaying.toggle()}) {
