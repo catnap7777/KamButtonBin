@@ -32,14 +32,16 @@ struct ContentView: View {
               .foregroundColor(Color("subTitleColor"))
           }
         }
-        .padding(.bottom, 25)
         .pickerStyle(.wheel)
-        .frame(height: 125)
+        .frame(height: 75)
+        .clipped()
         .padding(.top, 35)
+        .padding(.bottom, 35)
         Image(buttonModel.buttons[choice4].picture)
           .resizable()
           .frame(width: 200, height: 200, alignment: .center)
-          .padding(.top, 20)
+          .padding(.top, 2)
+          .border(Color("magnesium"), width: 2)
         Text ("\(buttonModel.buttons[choice4].description)")
           .foregroundColor(.black)
           .bold()
@@ -47,6 +49,7 @@ struct ContentView: View {
           .font(Font.custom("Arial-ItalicMT", size: 15))
           .frame(width: 300, height: 45, alignment: .center)
           .padding(.top, 10)
+        Spacer()
         NavigationLink(destination: {
           switch choice4 {
           case 0: ButtonStyles()
@@ -63,7 +66,7 @@ struct ContentView: View {
             ButtonStyles()
           }
         },  label: {
-          Label("GO", systemImage: "applelogo")
+          Label("View Your Choice", systemImage: "applelogo")
             .font(Font.custom("ChalkboardSE-bold", size: 18))
         })
         .buttonStyle(.borderedProminent)
