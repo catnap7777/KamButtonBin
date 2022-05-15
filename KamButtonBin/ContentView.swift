@@ -15,15 +15,15 @@ struct ContentView: View {
     NavigationView {
       VStack(spacing: 10.0) {
         Text("SwiftUI Buttons")
-          .foregroundColor(Color("subTitleColor"))
+          .foregroundColor(Color("titleColor"))
           .font(Font.custom("ChalkboardSE-bold", size: 30))
         Text("(RW/FSP 5/11/22)")
         //Text("Button Bin")
-          .foregroundColor(Color("subTitleColor"))
+          .foregroundColor(Color("titleColor"))
 //          .font(Font.custom("ChalkboardSE-bold", size: 45))
           .font(Font.custom("ChalkboardSE-bold", size: 25))
         Text("Choose Your Favorite Button")
-          .foregroundColor(Color("titleColor"))
+          .foregroundColor(Color("subTitleColor"))
           .font(Font.custom("ChalkboardSE-bold", size: 18))
         Picker(selection: $choice4, label: Text("MyPicker")) {
           ForEach(buttonModel.buttons) { item in
@@ -43,7 +43,7 @@ struct ContentView: View {
           .padding(.top, 2)
           .border(Color("magnesium"), width: 2)
         Text ("\(buttonModel.buttons[choice4].description)")
-          .foregroundColor(.black)
+          .foregroundColor(.gray)
           .bold()
         //.background(.yellow)
           .font(Font.custom("Arial-ItalicMT", size: 15))
@@ -66,12 +66,12 @@ struct ContentView: View {
             ButtonStyles()
           }
         },  label: {
-          Label("View Your Choice", systemImage: "applelogo")
+          Label("View Your Choice", systemImage: "eye")
             .font(Font.custom("ChalkboardSE-bold", size: 18))
         })
-        .buttonStyle(.borderedProminent)
+        .buttonStyle(.bordered)
         .buttonBorderShape(.capsule)
-        .tint(.purple)
+        .tint(Color("titleColor"))
         .controlSize(.regular)
         .navigationBarTitle("Back")
         .navigationBarHidden(true)
