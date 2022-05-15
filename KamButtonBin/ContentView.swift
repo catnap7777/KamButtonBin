@@ -43,13 +43,11 @@ struct ContentView: View {
           .padding(.top, 2)
           .border(Color("magnesium"), width: 2)
         Text ("\(buttonModel.buttons[choice4].description)")
+          .multilineTextAlignment(.center)
           .foregroundColor(.gray)
-          .bold()
-        //.background(.yellow)
           .font(Font.custom("Arial-ItalicMT", size: 15))
           .frame(width: 300, height: 45, alignment: .center)
-          .padding(.top, 10)
-        Spacer()
+          Spacer()
         NavigationLink(destination: {
           switch choice4 {
           case 0: ButtonStyles()

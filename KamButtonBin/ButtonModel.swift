@@ -22,7 +22,7 @@ struct ButtonModel {
     ButtonItem(id: 1, type: "Rounded Rectangle Buttons", description: "Regular rectangles are so basic...", picture: "roundedrectangle"),
     ButtonItem(id: 2, type: "Capsule Buttons", description: "Smooth and easy ovals...", picture: "capsule"),
     ButtonItem(id: 3, type: "Destructive Buttons", description: "Take out the trash buttons...", picture: "destructive"),
-    ButtonItem(id: 4, type: "Control Size", description: "Large, medium, and small... they've got it all...", picture: "controlsize"),
+    ButtonItem(id: 4, type: "Control Size", description: "Large, medium, and small... \nthey've got it all...", picture: "controlsize"),
     ButtonItem(id: 5, type: "Tinted Buttons", description: "Color me happy with tints...", picture: "tinted"),
     ButtonItem(id: 6, type: "Toggle Buttons", description: "Make a choice already...", picture: "toggle"),
     ButtonItem(id: 7, type: "Pop-up Menu Buttons", description: "Waiter, I'll take this one...", picture: "menu"),
