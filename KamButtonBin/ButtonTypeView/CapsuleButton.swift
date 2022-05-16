@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CapsuleButtons: View {
+struct CapsuleButton: View {
   var body: some View {
     VStack(spacing: 50) {
       Text("Capsule Buttons")
@@ -15,7 +15,7 @@ struct CapsuleButtons: View {
         .foregroundColor(Color("titleColor"))
         .padding(.bottom, 50)
       Button {
-        //
+        // code
       } label: {
         Text("Capsule Button")
           .padding(.all, 10)
@@ -31,7 +31,7 @@ struct CapsuleButtons: View {
 }
 
 struct CapsuleButton_Previews: PreviewProvider {
-    static var previews: some View {
-        CapsuleButtons()
-    }
+  static var previews: some View {
+    CapsuleButton()
+  }
 }

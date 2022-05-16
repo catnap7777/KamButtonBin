@@ -39,7 +39,7 @@ struct ControlSizeButtons: View {
 }
 
 struct ControlSizeButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        ControlSizeButtons()
-    }
+  static var previews: some View {
+    ControlSizeButtons()
+  }
 }

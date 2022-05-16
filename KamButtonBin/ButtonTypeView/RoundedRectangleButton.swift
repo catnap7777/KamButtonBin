@@ -5,10 +5,9 @@
 //  Created by Karen Mathes on 5/10/22.
 //
 
-
 import SwiftUI
 
-struct RoundedRectangleButtons: View {
+struct RoundedRectangleButton: View {
   var body: some View {
     VStack(spacing: 50) {
       Text("Rounded Rectangles")
@@ -16,7 +15,7 @@ struct RoundedRectangleButtons: View {
         .foregroundColor(Color("titleColor"))
         .padding(.bottom, 50)
       Button {
-        //code
+        // code
       } label: {
         Text("Rounded Rectangle\n(.bordered)")
           .padding(.all, 5)
@@ -24,11 +23,10 @@ struct RoundedRectangleButtons: View {
           .font(Font.custom("ChalkboardSE-bold", size: 18))
       }
       .buttonStyle(.bordered)
-      .buttonBorderShape(.roundedRectangle(radius:15))
+      .buttonBorderShape(.roundedRectangle(radius: 15))
       Button("Rounded Rectangle\n(.borderedProminent)") {
-        //code
+        // code
       }
-      //padding doesn't really work here on a simple button
       .padding(.all, 10)
       .buttonStyle(.borderedProminent)
       .buttonBorderShape(.roundedRectangle(radius: 10))
@@ -40,8 +38,8 @@ struct RoundedRectangleButtons: View {
   }
 }
 
-struct RoundedRectangleButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        RoundedRectangleButtons()
-    }
+struct RoundedRectangleButton_Previews: PreviewProvider {
+  static var previews: some View {
+    RoundedRectangleButton()
+  }
 }

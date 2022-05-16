@@ -15,11 +15,10 @@ struct MyCustomButton1: ButtonStyle {
       .padding(.all, 20)
       .buttonStyle(.bordered)
       .background(
-        LinearGradient(gradient: Gradient(
-          colors: [.mint, .blue, .indigo]),
-                       startPoint: .topLeading,
-                       endPoint: .bottomTrailing)
-        // since iOS 13
+        LinearGradient(
+          gradient: Gradient(colors: [.orange, .blue, .green]),
+          startPoint: .topLeading,
+          endPoint: .bottomTrailing)
       )
       .foregroundColor(.white)
       .textCase(.uppercase)
@@ -27,7 +26,7 @@ struct MyCustomButton1: ButtonStyle {
   }
 }
 
-struct CustomButtons: View {
+struct CustomButton: View {
   var body: some View {
     VStack(spacing: 50) {
       Text("Custom Buttons")
@@ -47,21 +46,22 @@ struct CustomButtons: View {
         print("Here's my custom button3")
       }
       .buttonStyle(MyCustomButton1())
-      .shadow(color: .green, radius: 5, x: 15, y: 15)
-      Button(action: {print("Here's my custom button4")}) {
+      .shadow(color: .purple, radius: 5, x: 15, y: 15)
+      Button {
+        print("Here's my custom button4")
+      } label: {
         Label("Custom Button4", systemImage: "applelogo")
       }
       .buttonStyle(MyCustomButton1())
-      .shadow(color: .cyan, radius: 25, x: 15, y: 15)
-      .overlay(RoundedRectangle(cornerRadius: 0).stroke(Color.purple, lineWidth: 3))
+      .shadow(color: .yellow, radius: 25, x: 15, y: 15)
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)
   }
 }
 
-struct CustomButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomButtons()
-    }
+struct CustomButton_Previews: PreviewProvider {
+  static var previews: some View {
+    CustomButton()
+  }
 }

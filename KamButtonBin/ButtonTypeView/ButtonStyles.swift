@@ -15,15 +15,15 @@ struct ButtonStyles: View {
         .foregroundColor(Color("titleColor"))
         .padding(.bottom, 50)
       Button(".plain") {
-        //code
+        // code
       }
       .buttonStyle(.plain)
       Button(".bordered") {
-        //code
+        // code
       }
       .buttonStyle(.bordered)
-      Button("borderedProminent") {
-        //code
+      Button(".borderedProminent") {
+        // code
       }
       .buttonStyle(.borderedProminent)
       Button {
@@ -37,12 +37,11 @@ struct ButtonStyles: View {
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)
-
   }
 }
 
 struct ButtonStyles_Previews: PreviewProvider {
-    static var previews: some View {
-        ButtonStyles()
-    }
+  static var previews: some View {
+    ButtonStyles()
+  }
 }

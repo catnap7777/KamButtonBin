@@ -18,7 +18,7 @@ struct ToggleButtons: View {
         .font(Font.custom("ChalkboardSE-bold", size: 30))
         .foregroundColor(Color("titleColor"))
         .padding(.bottom, 50)
-      VStack (spacing: 12) {
+      VStack(spacing: 12) {
         Toggle("Toggle Button", isOn: $isSunnyToday1)
           .toggleStyle(SwitchToggleStyle(tint: .yellow))
           .padding(.horizontal, 100)
@@ -33,11 +33,11 @@ struct ToggleButtons: View {
         }
       }
       VStack {
-        Toggle(isOn: $isSunnyToday2, label: {
+        Toggle(isOn: $isSunnyToday2) {
           Image("swift")
             .resizable()
             .frame(width: 50, height: 50, alignment: .center)
-        })
+        }
         .toggleStyle(.button)
         .tint(.yellow)
         .font(Font.custom("ChalkboardSE-bold", size: 25))
@@ -62,10 +62,10 @@ struct ToggleButtons: View {
       }
       .tint(.orange)
       .buttonStyle(ProgressButtonStyle(isLoading: isLoading))
-      Button(action: {
+      Button {
         self.isPlaying.toggle()
         print(isPlaying ? "playing" : "paused")
-      }) {
+      } label: {
         Image(systemName: self.isPlaying == true ? "pause.fill" : "play.fill")
           .resizable()
           .frame(width: 30, height: 30)
@@ -78,21 +78,20 @@ struct ToggleButtons: View {
 }
 
 struct ProgressButtonStyle: ButtonStyle {
-    let isLoading: Bool
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .opacity(isLoading ? 0 : 1)
-            .overlay {
-                if isLoading {
-                    ProgressView()
-                }
-            }
-    }
+  let isLoading: Bool
+  func makeBody(configuration: Configuration) -> some View {
+    configuration.label
+      .opacity(isLoading ? 0 : 1)
+      .overlay {
+        if isLoading {
+          ProgressView()
+        }
+      }
+  }
 }
 
 struct ToggleButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        ToggleButtons()
-    }
+  static var previews: some View {
+    ToggleButtons()
+  }
 }

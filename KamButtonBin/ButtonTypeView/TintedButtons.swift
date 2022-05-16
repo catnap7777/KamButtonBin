@@ -16,7 +16,7 @@ struct TintedButtons: View {
         .padding(.bottom, 50)
       Button(action: {}, label: {
         Label("Tinted Button1", systemImage: "applelogo")
-          .padding(.all, 10)
+          .padding(.all, 5)
           .foregroundColor(.pink)
       })
       .buttonStyle(.bordered)
@@ -44,7 +44,6 @@ struct TintedButtons: View {
           .font(Font.custom("ChalkboardSE-bold", size: 18))
       })
       .buttonStyle(.bordered)
-      //      .buttonBorderShape(.roundedRectangle(radius: 10))
       .buttonBorderShape(.capsule)
       .tint(.purple)
       .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.purple, lineWidth: 2))
@@ -55,7 +54,7 @@ struct TintedButtons: View {
 }
 
 struct TintedButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        TintedButtons()
-    }
+  static var previews: some View {
+    TintedButtons()
+  }
 }

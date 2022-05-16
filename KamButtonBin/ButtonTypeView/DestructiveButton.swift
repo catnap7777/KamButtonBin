@@ -7,49 +7,49 @@
 
 import SwiftUI
 
-struct DestructiveButtons: View {
+struct DestructiveButton: View {
   var body: some View {
     VStack(spacing: 50) {
       Text("Destructive Buttons")
         .font(Font.custom("ChalkboardSE-bold", size: 35))
         .foregroundColor(Color("titleColor"))
         .padding(.bottom, 50)
-      Button(role: .destructive, action: {
+      Button(role: .destructive) {
         print("please delete me now...")
-      }) { // new in iOS 15
+      } label: {
         Label("Delete", systemImage: "trash.fill")
           .font(Font.custom("Arial-BoldMT", size: 25))
       }
       .buttonStyle(.bordered)
       .buttonBorderShape(.capsule)
-      Button(role: .destructive, action: {
+      Button(role: .destructive) {
         print("please delete me now...")
-      }) { // new in iOS 15
+      } label: {
         Image(systemName: "trash.circle.fill")
           .resizable()
           .frame(width: 50, height: 50)
           .foregroundColor(.red)
       }
-      Button(role: .destructive, action: {
+      Button(role: .destructive) {
         print("please delete me now...")
-      }) { // new in iOS 15
+      } label: {
         Label("Delete", systemImage: "trash.fill")
           .font(Font.custom("Arial-BoldMT", size: 25))
       }
       .buttonStyle(.borderedProminent)
       .buttonBorderShape(.capsule)
-      Button(role: .destructive, action: {
+      Button(role: .destructive) {
         print("please delete me now...")
-      }) { // new in iOS 15
+      } label: {
         Label("Delete", systemImage: "trash.fill")
           .font(Font.custom("Arial-BoldMT", size: 25))
       }
       .buttonStyle(.bordered)
       .buttonBorderShape(.capsule)
       .tint(.teal)
-      Button(role: .destructive, action: {
+      Button(role: .destructive) {
         print("please delete me now...")
-      }) { // new in iOS 15
+      } label: {
         Label("Delete", systemImage: "trash.fill")
           .font(Font.custom("Arial-BoldMT", size: 25))
           .padding(.vertical, 7)
@@ -58,16 +58,14 @@ struct DestructiveButtons: View {
           .foregroundColor(.white)
       }
       .clipShape(RoundedRectangle(cornerRadius: 25))
-
-      
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)
   }
 }
 
-struct DestructiveButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        DestructiveButtons()
-    }
+struct DestructiveButton_Previews: PreviewProvider {
+  static var previews: some View {
+    DestructiveButton()
+  }
 }

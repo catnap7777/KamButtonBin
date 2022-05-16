@@ -37,7 +37,6 @@ struct MenuButtons: View {
       .font(Font.custom("SavoyeLetPlain", size: 30))
       .background(.indigo)
       .clipShape(RoundedRectangle(cornerRadius: 25))
-
       Spacer()
     }
     .navigationBarTitleDisplayMode(.inline)
@@ -45,7 +44,7 @@ struct MenuButtons: View {
 }
 
 struct MenuButtons_Previews: PreviewProvider {
-    static var previews: some View {
-        MenuButtons()
-    }
+  static var previews: some View {
+    MenuButtons()
+  }
 }
