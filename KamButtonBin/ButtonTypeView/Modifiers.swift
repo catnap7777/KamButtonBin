@@ -10,11 +10,11 @@ import SwiftUI
 struct Modifiers: View {
   @State var isDisplaying = false
   var body: some View {
-    VStack(spacing: 50) {
+    VStack(spacing: 35) {
       Text("More Modifiers")
         .font(Font.custom("ChalkboardSE-bold", size: 30))
         .foregroundColor(Color("titleColor"))
-        .padding(.bottom, 50)
+        .padding(.bottom, 15)
       Button(action: {}, label: {
         Label("More Modifiers", systemImage: "applelogo")
           .padding(.all, 20)

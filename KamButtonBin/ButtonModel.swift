@@ -36,7 +36,7 @@ struct ButtonModel {
       id: 2,
       type: "Capsule Buttons",
       description: "Smooth and easy ovals...",
-      picture: "capsuled"),
+      picture: "capsule"),
     ButtonItem(
       id: 3,
       type: "Destructive Buttons",
