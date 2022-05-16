@@ -46,7 +46,7 @@ struct ButtonModel {
       id: 4,
       type: "Control Size",
       description: "Large, medium, and small... \nthey've got it all...",
-      picture: "controlsized"),
+      picture: "controlsize"),
     ButtonItem(
       id: 5,
       type: "Tinted Buttons",
