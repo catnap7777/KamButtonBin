@@ -38,20 +38,41 @@ struct CustomButtons: View {
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))
+            //***********************************
             Button("Custom Button1") {
                 print("Here's my custom button1")
             }
             .buttonStyle(MyCustomButton1())
-            Button("Custom Button2") {
-                print("Here's my custom button2")
+            //***********************************
+            Button {
+                // code
+            } label: {
+                Rectangle()
+                    .fill(AngularGradient(colors: [.purple, .blue, .black, .purple, .blue, .black, .purple], center: .center))
+                    .frame(width: 250, height: 55)
+                    .overlay {
+                        Text("Custom Button2")
+                            .foregroundColor(.white)
+                            .font(.body)
+                            .fontWeight(.bold)
+                    }
             }
-            .buttonStyle(MyCustomButton1())
-            .clipShape(RoundedRectangle(cornerSize: .init(width: 20, height: 20)))
-            Button("Custom Button3") {
-                print("Here's my custom button3")
+            //***********************************
+            Button {
+                // code
+            } label: {
+                Rectangle()
+                    .fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .top, startRadius: 10, endRadius: 65))
+                    .frame(width: 250, height: 55)
+                    .overlay {
+                        Text("Custom Button3")
+                            .foregroundColor(.white)
+                            .font(.body)
+                            .fontWeight(.bold)
+                    }
             }
-            .buttonStyle(MyCustomButton1())
-            .shadow(color: .purple, radius: 5, x: 15, y: 15)
+            .shadow(color: .teal, radius: 25, x: 15, y: 15)
+            //***********************************
             Button {
                 print("Here's my custom button4")
             } label: {
