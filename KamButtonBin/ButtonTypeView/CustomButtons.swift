@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MyCustomButton1: ButtonStyle {
+struct CustomButton: ButtonStyle {
     func makeBody(configuration: Configuration)
     -> some View {
         configuration.label
@@ -42,7 +42,7 @@ struct CustomButtons: View {
             Button("Custom Button1") {
                 print("Here's my custom button1")
             }
-            .buttonStyle(MyCustomButton1())
+            .buttonStyle(CustomButton())
             //***********************************
             Button {
                 // code
@@ -78,7 +78,7 @@ struct CustomButtons: View {
             } label: {
                 Label("Custom Button4", systemImage: "applelogo")
             }
-            .buttonStyle(MyCustomButton1())
+            .buttonStyle(CustomButton())
             .shadow(color: .yellow, radius: 25, x: 15, y: 15)
             Spacer()
         }
