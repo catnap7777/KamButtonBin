@@ -59,7 +59,7 @@ struct ButtonModel {
     ButtonItem(
       id: 4,
       type: .controlSize,
-      description: "Small, regular, and large sized buttons are easily defined by using the .controlSize modifier. The .buttonSyle and .buttonborderShape modifiers can also be used to further style the button.",
+      description: "Small, regular, and large sized buttons are easily defined by using the .controlSize modifier. The .buttonSyle, .buttonborderShape, and .tint modifiers can also be used to further style the button.",
       picture: "controlsize"),
     ButtonItem(
       id: 5,
