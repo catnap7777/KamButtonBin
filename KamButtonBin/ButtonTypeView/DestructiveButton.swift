@@ -14,7 +14,7 @@ struct DestructiveButton: View {
         .font(Font.custom("ChalkboardSE-bold", size: 35))
         .foregroundColor(Color("titleColor"))
         .padding(.bottom, 50)
-      Button(role: .destructive) {
+        Button(role: .destructive) {
         print("please delete me now...")
       } label: {
         Label("Delete", systemImage: "trash.fill")

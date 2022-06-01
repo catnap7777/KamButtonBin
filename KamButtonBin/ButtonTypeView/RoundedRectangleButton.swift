@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct RoundedRectangleButton: View {
+    var buttonModel: ButtonModel
+    var buttonTypeInd: Int = ButtonType.roundedRectangles.rawValue
   var body: some View {
-    VStack(spacing: 50) {
+    VStack(spacing: 20) {
       Text("Rounded Rectangles")
-        .font(Font.custom("ChalkboardSE-bold", size: 35))
-        .foregroundColor(Color("titleColor"))
-        .padding(.bottom, 50)
+        .font(Font.custom("ChalkboardSE-bold", size: 25))
+        .foregroundColor(Color("subTitleColor"))
+        .padding(.bottom, 15)
+        Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+            .padding(.horizontal, 25)
+            .font(Font.custom("Arial-italicMT", size: 15))
       Button {
         // code
       } label: {
@@ -40,6 +45,6 @@ struct RoundedRectangleButton: View {
 
 struct RoundedRectangleButton_Previews: PreviewProvider {
   static var previews: some View {
-    RoundedRectangleButton()
+    RoundedRectangleButton(buttonModel: ButtonModel())
   }
 }

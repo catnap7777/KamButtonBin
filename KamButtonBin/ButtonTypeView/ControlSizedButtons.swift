@@ -31,6 +31,7 @@ struct ControlSizeButtons: View {
           .foregroundColor(.purple)
       })
       .buttonStyle(.bordered)
+      .buttonBorderShape(.capsule)
       .controlSize(.large)
       Spacer()
     }

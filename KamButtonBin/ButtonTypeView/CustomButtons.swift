@@ -26,7 +26,7 @@ struct MyCustomButton1: ButtonStyle {
   }
 }
 
-struct CustomButton: View {
+struct CustomButtons: View {
   var body: some View {
     VStack(spacing: 50) {
       Text("Custom Buttons")
@@ -60,8 +60,8 @@ struct CustomButton: View {
   }
 }
 
-struct CustomButton_Previews: PreviewProvider {
+struct CustomButtons_Previews: PreviewProvider {
   static var previews: some View {
-    CustomButton()
+    CustomButtons()
   }
 }
