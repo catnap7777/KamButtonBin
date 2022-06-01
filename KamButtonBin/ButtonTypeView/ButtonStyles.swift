@@ -44,6 +44,7 @@ struct ButtonStyles: View {
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
