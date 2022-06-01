@@ -48,7 +48,7 @@ struct ButtonStyles: View {
 }
 
 struct ButtonStyles_Previews: PreviewProvider {
-  static var previews: some View {
-    ButtonStyles(buttonModel: ButtonModel())
-  }
+    static var previews: some View {
+        ButtonStyles(buttonModel: ButtonModel())
+    }
 }

@@ -38,11 +38,11 @@ struct ContentView: View {
             .tabItem {
                 Image(systemName: "circle")
               }
-              CapsuleButton()
+              CapsuleButton(buttonModel: buttonModel, buttonTypeInd: ButtonType.capsule.rawValue)
             .tabItem {
                 Image(systemName: "circle")
               }
-              DestructiveButton()
+              DestructiveButton(buttonModel: buttonModel, buttonTypeInd: ButtonType.destructive.rawValue)
             .tabItem {
                 Image(systemName: "circle")
               }

@@ -49,12 +49,12 @@ struct ButtonModel {
     ButtonItem(
       id: 2,
       type: .capsule,
-      description: "Capsule buttons are easily created using the .buttonBorderShape(.capsule) modifier.",
+      description: "Capsule buttons are easily created using the .buttonBorderShape(.capsule) modifier. Other modifiers such as .buttonSyle, .tint, and .controlSize can also be used to further style the button.",
       picture: "capsule"),
     ButtonItem(
       id: 3,
       type: .destructive,
-      description: "Destructive buttons are easily defined by using the role: parameter when defining the button such as Button(role: .destructive). The .buttonSyle and .buttonborderShape modifiers can also be used to further style the button.",
+      description: "Destructive buttons are easily defined by using the role: parameter when defining the button such as Button(role: .destructive). The .buttonSyle, .buttonborderShape, and .tint modifiers can also be used to further style the button.",
       picture: "destructive"),
     ButtonItem(
       id: 4,

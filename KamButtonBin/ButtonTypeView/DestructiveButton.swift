@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct DestructiveButton: View {
+    var buttonModel: ButtonModel
+    var buttonTypeInd: Int = ButtonType.destructive.rawValue
   var body: some View {
-    VStack(spacing: 50) {
+    VStack(spacing: 20) {
       Text("Destructive Buttons")
-        .font(Font.custom("ChalkboardSE-bold", size: 35))
-        .foregroundColor(Color("titleColor"))
-        .padding(.bottom, 50)
+        .font(Font.custom("ChalkboardSE-bold", size: 25))
+        .foregroundColor(Color("subTitleColor"))
+        .padding(.bottom, 15)
+        Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+            .padding(.horizontal, 25)
+            .font(Font.custom("Arial-italicMT", size: 15))
         Button(role: .destructive) {
         print("please delete me now...")
       } label: {
@@ -66,6 +71,6 @@ struct DestructiveButton: View {
 
 struct DestructiveButton_Previews: PreviewProvider {
   static var previews: some View {
-    DestructiveButton()
+    DestructiveButton(buttonModel: ButtonModel())
   }
 }
