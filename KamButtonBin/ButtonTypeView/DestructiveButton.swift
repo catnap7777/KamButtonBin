@@ -10,6 +10,11 @@ import SwiftUI
 struct DestructiveButton: View {
     var buttonModel: ButtonModel
     var buttonTypeInd: Int = ButtonType.destructive.rawValue
+    @State var showAlert1 = false
+    @State var showAlert2 = false
+    @State var showAlert3 = false
+    @State var showAlert4 = false
+    @State var showAlert5 = false
     var body: some View {
         VStack(spacing: 20) {
             Text("Destructive Buttons")
@@ -20,31 +25,40 @@ struct DestructiveButton: View {
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))
             Button(role: .destructive) {
-                print("please delete me now...")
+                showAlert1.toggle()
             } label: {
                 Label("Delete", systemImage: "trash.fill")
                     .font(Font.custom("Arial-BoldMT", size: 25))
             }
             .buttonStyle(.bordered)
             .buttonBorderShape(.capsule)
+            .alert(isPresented: $showAlert1) {
+                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered),\n .buttonBorderShape(.capsule), and role: .destructive used."), dismissButton: .default(Text("OK")))
+            }
             Button(role: .destructive) {
-                print("please delete me now...")
+                showAlert2.toggle()
             } label: {
                 Image(systemName: "trash.circle.fill")
                     .resizable()
                     .frame(width: 50, height: 50)
                     .foregroundColor(.red)
             }
+            .alert(isPresented: $showAlert2) {
+                Alert(title: Text("Message"), message: Text("Image with systemName:,\n .resizeable, .frame, .foregroundColor, and role: .destructive used."), dismissButton: .default(Text("OK")))
+            }
             Button(role: .destructive) {
-                print("please delete me now...")
+                showAlert3.toggle()
             } label: {
                 Label("Delete", systemImage: "trash.fill")
                     .font(Font.custom("Arial-BoldMT", size: 25))
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
+            .alert(isPresented: $showAlert3) {
+                Alert(title: Text("Message"), message: Text(".buttonStyle(.borderedProminent),\n .buttonBorderShape(.capsule), and role: .destructive used."), dismissButton: .default(Text("OK")))
+            }
             Button(role: .destructive) {
-                print("please delete me now...")
+                showAlert4.toggle()
             } label: {
                 Label("Delete", systemImage: "trash.fill")
                     .font(Font.custom("Arial-BoldMT", size: 25))
@@ -52,8 +66,11 @@ struct DestructiveButton: View {
             .buttonStyle(.bordered)
             .buttonBorderShape(.capsule)
             .tint(.teal)
+            .alert(isPresented: $showAlert4) {
+                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered),\n .buttonBorderShape(.capsule), \n.tint(.teal), and role: .destructive used."), dismissButton: .default(Text("OK")))
+            }
             Button(role: .destructive) {
-                print("please delete me now...")
+                showAlert5.toggle()
             } label: {
                 Label("Delete", systemImage: "trash.fill")
                     .font(Font.custom("Arial-BoldMT", size: 25))
@@ -63,6 +80,9 @@ struct DestructiveButton: View {
                     .foregroundColor(.white)
             }
             .clipShape(RoundedRectangle(cornerRadius: 25))
+            .alert(isPresented: $showAlert5) {
+                Alert(title: Text("Message"), message: Text(".clipShape(RoundedRectangle\n(cornerRadius:  25),\n .background, .foregroundColor, .font, and role: .destructive used."), dismissButton: .default(Text("OK")))
+            }
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
