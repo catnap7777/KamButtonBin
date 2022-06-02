@@ -14,7 +14,7 @@ struct ControlSizeButtons: View {
     @State var showAlert2 = false
     @State var showAlert3 = false
     var body: some View {
-        VStack(spacing: 20) {
+        VStack {
             Text("Control Size with Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
@@ -24,42 +24,44 @@ struct ControlSizeButtons: View {
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 14))
             Divider()
-            Button(action: {
-                showAlert1.toggle()
-            }, label: {
-                Label(".controlSize(small)", systemImage: "hammer.fill")
-                    .foregroundColor(.pink)
-            })
-            .buttonStyle(.bordered)
-            .controlSize(.small)
-            .alert(isPresented: $showAlert1) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered) and \n .controlSize(.small) used."), dismissButton: .default(Text("OK")))
+            VStack(spacing: 20) {
+                Button(action: {
+                    showAlert1.toggle()
+                }, label: {
+                    Label(".controlSize(small)", systemImage: "hammer.fill")
+                        .foregroundColor(.pink)
+                })
+                .buttonStyle(.bordered)
+                .controlSize(.small)
+                .alert(isPresented: $showAlert1) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifiers:\n.buttonStyle(.bordered) and \n .controlSize(.small)"), dismissButton: .default(Text("OK")))
+                }
+                Button(action: {
+                    showAlert2.toggle()
+                }, label: {
+                    Label(".controlSize(regular)", systemImage: "hammer.fill")
+                        .foregroundColor(.blue)
+                })
+                .buttonStyle(.bordered)
+                .controlSize(.regular)
+                .alert(isPresented: $showAlert2) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifiers:\n.buttonStyle(.bordered) and \n .controlSize(.regular)"), dismissButton: .default(Text("OK")))
+                }
+                Button(action: {
+                    showAlert3.toggle()
+                }, label: {
+                    Label(".controlSize(large)", systemImage: "hammer.fill")
+                        .foregroundColor(.purple)
+                })
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.capsule)
+                .tint(.green)
+                .controlSize(.large)
+                .alert(isPresented: $showAlert3) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifiers:\n.buttonStyle(.bordered),\n.buttonBorderShape(.capsule),\n .tint(.green), .controlSize(.large)"), dismissButton: .default(Text("OK")))
+                }
+                Spacer()
             }
-            Button(action: {
-                showAlert2.toggle()
-            }, label: {
-                Label(".controlSize(regular)", systemImage: "hammer.fill")
-                    .foregroundColor(.blue)
-            })
-            .buttonStyle(.bordered)
-            .controlSize(.regular)
-            .alert(isPresented: $showAlert2) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered) and \n .controlSize(.regular) used."), dismissButton: .default(Text("OK")))
-            }
-            Button(action: {
-                showAlert3.toggle()
-            }, label: {
-                Label(".controlSize(large)", systemImage: "hammer.fill")
-                    .foregroundColor(.purple)
-            })
-            .buttonStyle(.bordered)
-            .buttonBorderShape(.capsule)
-            .tint(.green)
-            .controlSize(.large)
-            .alert(isPresented: $showAlert3) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered),\n.buttonBorderShape(.capsule),\n .tint(.green), and .controlSize(.large) used."), dismissButton: .default(Text("OK")))
-            }
-            Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
     }

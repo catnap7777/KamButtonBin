@@ -15,74 +15,82 @@ struct ToggleButtons: View {
     @State var isLoading = false
     @State var isPlaying = false
     var body: some View {
-        VStack(spacing: 20) {
-            Text("Toggle Buttons")
-                .font(Font.custom("ChalkboardSE-bold", size: 25))
-                .foregroundColor(Color("subTitleColor"))
-                .padding(.vertical, 15)
-            Text("\((buttonModel.buttons[buttonTypeInd]).description)")
-                .multilineTextAlignment(.center)
-                .padding(.horizontal, 25)
-                .font(Font.custom("Arial-italicMT", size: 14))
-            Divider()
-            VStack(spacing: 45) {
-                VStack(spacing: 12) {
-                    Toggle("Toggle Button", isOn: $isSunnyToday1)
-                        .toggleStyle(SwitchToggleStyle(tint: .yellow))
-                        .padding(.horizontal, 100)
-                    if isSunnyToday1 {
-                        Label("Sunny Day", systemImage: "sun.max.fill")
-                            .foregroundColor(.yellow)
-                            .font(Font.custom("ChalkboardSE-bold", size: 18))
-                    } else {
-                        Label("Not a Sunny Day", systemImage: "cloud.fill")
-                            .foregroundColor(.gray)
-                            .font(Font.custom("ChalkboardSE-bold", size: 18))
-                    }
-                }
+        ScrollView {
             VStack {
-                Toggle(isOn: $isSunnyToday2) {
-                    Image("swift")
-                        .resizable()
-                        .frame(width: 50, height: 50, alignment: .center)
+                Text("Toggle Buttons")
+                    .font(Font.custom("ChalkboardSE-bold", size: 25))
+                    .foregroundColor(Color("subTitleColor"))
+                    .padding(.vertical, 15)
+                Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 25)
+                    .font(Font.custom("Arial-italicMT", size: 14))
+                Divider()
+                VStack(spacing: 15) {
+                    VStack(spacing: 12) {
+                        Toggle("Toggle Button", isOn: $isSunnyToday1)
+                            .toggleStyle(SwitchToggleStyle(tint: .yellow))
+                            .padding(.horizontal, 100)
+                        if isSunnyToday1 {
+                            Label("Sunny Day", systemImage: "sun.max.fill")
+                                .foregroundColor(.yellow)
+                                .font(Font.custom("ChalkboardSE-bold", size: 18))
+                        } else {
+                            Label("Not a Sunny Day", systemImage: "cloud.fill")
+                                .foregroundColor(.gray)
+                                .font(Font.custom("ChalkboardSE-bold", size: 18))
+                        }
+                    }
+                    .padding(.bottom, 15)
+                    Divider()
+                    VStack {
+                        Toggle(isOn: $isSunnyToday2) {
+                            Image("swift")
+                                .resizable()
+                                .frame(width: 50, height: 50, alignment: .center)
+                        }
+                        .toggleStyle(.button)
+                        .tint(.yellow)
+                        .font(Font.custom("ChalkboardSE-bold", size: 25))
+                        if isSunnyToday2 {
+                            Text("Sunny Day!")
+                                .foregroundColor(.yellow)
+                                .bold()
+                        } else {
+                            Text("Not a Sunny Day!")
+                                .foregroundColor(.gray)
+                                .bold()
+                        }
+                    }
+                    Divider()
+                    Button {
+                        isLoading.toggle()
+                    } label: {
+                        Label("Download", systemImage: "icloud.and.arrow.down.fill")
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color.purple)
+                            .cornerRadius(20)
+                    }
+                    .tint(.orange)
+                    .buttonStyle(ProgressButtonStyle(isLoading: isLoading))
+                    .padding(.bottom, 15)
+                    Divider()
+                    Button {
+                        self.isPlaying.toggle()
+                        print(isPlaying ? "playing" : "paused")
+                    } label: {
+                        Image(systemName: self.isPlaying == true ? "pause.fill" : "play.fill")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.indigo)
+                    }
+                    Spacer()
                 }
-                .toggleStyle(.button)
-                .tint(.yellow)
-                .font(Font.custom("ChalkboardSE-bold", size: 25))
-                if isSunnyToday2 {
-                    Text("Sunny Day!")
-                        .foregroundColor(.yellow)
-                        .bold()
-                } else {
-                    Text("Not a Sunny Day!")
-                        .foregroundColor(.gray)
-                        .bold()
-                }
             }
-            Button {
-                isLoading.toggle()
-            } label: {
-                Label("Download", systemImage: "icloud.and.arrow.down.fill")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.purple)
-                    .cornerRadius(20)
-            }
-            .tint(.orange)
-            .buttonStyle(ProgressButtonStyle(isLoading: isLoading))
-            Button {
-                self.isPlaying.toggle()
-                print(isPlaying ? "playing" : "paused")
-            } label: {
-                Image(systemName: self.isPlaying == true ? "pause.fill" : "play.fill")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.indigo)
-            }
-            Spacer()
-            }
+            .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 

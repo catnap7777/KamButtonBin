@@ -16,7 +16,7 @@ struct DestructiveButton: View {
     @State var showAlert4 = false
     @State var showAlert5 = false
     var body: some View {
-        VStack(spacing: 20) {
+        VStack {
             Text("Destructive Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
@@ -26,66 +26,68 @@ struct DestructiveButton: View {
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 14))
             Divider()
-            Button(role: .destructive) {
-                showAlert1.toggle()
-            } label: {
-                Label("Delete", systemImage: "trash.fill")
-                    .font(Font.custom("Arial-BoldMT", size: 25))
+            VStack(spacing: 20) {
+                Button(role: .destructive) {
+                    showAlert1.toggle()
+                } label: {
+                    Label("Delete", systemImage: "trash.fill")
+                        .font(Font.custom("Arial-BoldMT", size: 25))
+                }
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.capsule)
+                .alert(isPresented: $showAlert1) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifiers:\n.buttonStyle(.bordered),\n .buttonBorderShape(.capsule), and the parameter role: .destructive"), dismissButton: .default(Text("OK")))
+                }
+                Button(role: .destructive) {
+                    showAlert2.toggle()
+                } label: {
+                    Image(systemName: "trash.circle.fill")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.red)
+                }
+                .alert(isPresented: $showAlert2) {
+                    Alert(title: Text("Message"), message: Text("This button uses:\nImage with the parameter systemName: \"trash.circle.fill\",\nthe parameter role: .destructive,\n and the modifiers .resizeable, .frame, and .foregroundColor"), dismissButton: .default(Text("OK")))
+                }
+                Button(role: .destructive) {
+                    showAlert3.toggle()
+                } label: {
+                    Label("Delete", systemImage: "trash.fill")
+                        .font(Font.custom("Arial-BoldMT", size: 25))
+                }
+                .buttonStyle(.borderedProminent)
+                .buttonBorderShape(.capsule)
+                .alert(isPresented: $showAlert3) {
+                    Alert(title: Text("Message"), message: Text("This button uses: the parameter role: .destructive and the modifiers \n.buttonStyle(.borderedProminent),\n .buttonBorderShape(.capsule)"), dismissButton: .default(Text("OK")))
+                }
+                Button(role: .destructive) {
+                    showAlert4.toggle()
+                } label: {
+                    Label("Delete", systemImage: "trash.fill")
+                        .font(Font.custom("Arial-BoldMT", size: 25))
+                }
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.capsule)
+                .tint(.teal)
+                .alert(isPresented: $showAlert4) {
+                    Alert(title: Text("Message"), message: Text("This button uses: the parameter role: .destructive and the modifiers \n.buttonStyle(.bordered),\n .buttonBorderShape(.capsule), \n.tint(.teal)"), dismissButton: .default(Text("OK")))
+                }
+                Button(role: .destructive) {
+                    showAlert5.toggle()
+                } label: {
+                    Label("Delete", systemImage: "trash.fill")
+                        .font(Font.custom("Arial-BoldMT", size: 25))
+                        .padding(.vertical, 7)
+                        .padding(.horizontal, 12)
+                        .background(.indigo)
+                        .foregroundColor(.white)
+                }
+                .clipShape(RoundedRectangle(cornerRadius: 25))
+                .alert(isPresented: $showAlert5) {
+                    Alert(title: Text("Message"), message: Text("This button uses: the parameter role: .destructive and the modifiers \n.clipShape(RoundedRectangle\n(cornerRadius:  25),\n .background, .foregroundColor, .font"), dismissButton: .default(Text("OK")))
+                }
+                Spacer()
             }
-            .buttonStyle(.bordered)
-            .buttonBorderShape(.capsule)
-            .alert(isPresented: $showAlert1) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered),\n .buttonBorderShape(.capsule), and role: .destructive used."), dismissButton: .default(Text("OK")))
-            }
-            Button(role: .destructive) {
-                showAlert2.toggle()
-            } label: {
-                Image(systemName: "trash.circle.fill")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .foregroundColor(.red)
-            }
-            .alert(isPresented: $showAlert2) {
-                Alert(title: Text("Message"), message: Text("Image with systemName:,\n .resizeable, .frame, .foregroundColor, and role: .destructive used."), dismissButton: .default(Text("OK")))
-            }
-            Button(role: .destructive) {
-                showAlert3.toggle()
-            } label: {
-                Label("Delete", systemImage: "trash.fill")
-                    .font(Font.custom("Arial-BoldMT", size: 25))
-            }
-            .buttonStyle(.borderedProminent)
-            .buttonBorderShape(.capsule)
-            .alert(isPresented: $showAlert3) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.borderedProminent),\n .buttonBorderShape(.capsule), and role: .destructive used."), dismissButton: .default(Text("OK")))
-            }
-            Button(role: .destructive) {
-                showAlert4.toggle()
-            } label: {
-                Label("Delete", systemImage: "trash.fill")
-                    .font(Font.custom("Arial-BoldMT", size: 25))
-            }
-            .buttonStyle(.bordered)
-            .buttonBorderShape(.capsule)
-            .tint(.teal)
-            .alert(isPresented: $showAlert4) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered),\n .buttonBorderShape(.capsule), \n.tint(.teal), and role: .destructive used."), dismissButton: .default(Text("OK")))
-            }
-            Button(role: .destructive) {
-                showAlert5.toggle()
-            } label: {
-                Label("Delete", systemImage: "trash.fill")
-                    .font(Font.custom("Arial-BoldMT", size: 25))
-                    .padding(.vertical, 7)
-                    .padding(.horizontal, 12)
-                    .background(.indigo)
-                    .foregroundColor(.white)
-            }
-            .clipShape(RoundedRectangle(cornerRadius: 25))
-            .alert(isPresented: $showAlert5) {
-                Alert(title: Text("Message"), message: Text(".clipShape(RoundedRectangle\n(cornerRadius:  25),\n .background, .foregroundColor, .font, and role: .destructive used."), dismissButton: .default(Text("OK")))
-            }
-            Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
     }

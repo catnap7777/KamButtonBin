@@ -17,11 +17,10 @@ struct Modifiers: View {
     var body: some View {
         ScrollView {
             VStack {
-                
                 Text("More Modifiers")
                     .font(Font.custom("ChalkboardSE-bold", size: 25))
                     .foregroundColor(Color("subTitleColor"))
-                    .padding(.vertical, 5)
+                    .padding(.vertical, 15)
                 Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 25)
@@ -33,11 +32,11 @@ struct Modifiers: View {
                         showAlert1.toggle()
                     }, label: {
                         Label("More Modifiers", systemImage: "applelogo")
-                            .padding(.all, 20)
+                            .padding(.all, 10)
                             .foregroundColor(.white)
                             .background(Color(.red))
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.purple, lineWidth: 5))
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.purple, lineWidth: 5))
                     })
                     .alert(isPresented: $showAlert1) {
                         Alert(title: Text("Message"), message: Text("This button uses the modifiers:\n.padding, .foregroundColor, \n.background, .clipShape, .overlay, and .stroke"), dismissButton: .default(Text("OK")))
@@ -47,10 +46,10 @@ struct Modifiers: View {
                     }, label: {
                         Image("swift")
                             .resizable()
-                            .frame(width: 100, height: 100)
+                            .frame(width: 75, height: 75)
                             .clipShape(Circle())
                             .overlay(Circle().stroke(Color.purple, lineWidth: 5))
-                            .shadow(color: .teal, radius: 55, x: 25, y: 25)
+                            .shadow(color: .teal, radius: 25, x: 25, y: 25)
                     })
                     .alert(isPresented: $showAlert2) {
                         Alert(title: Text("Message"), message: Text("This button uses an image and the modifiers:\n.resizeable, .frame, \n.clipShape, .overlay, .stroke, and .shadow"), dismissButton: .default(Text("OK")))
@@ -62,7 +61,7 @@ struct Modifiers: View {
                             HStack {
                                 Text("<- Displaying Rotating Button")
                                     .font(Font.custom("ChalkboardSE-bold", size: 18))
-                                    .frame(width: 325, height: 45, alignment: .trailing)
+                                    .frame(width: 325, height: 40, alignment: .trailing)
                                     .padding(.trailing, 10)
                                     .foregroundColor(.white)
                                     .background(.indigo)
@@ -78,9 +77,9 @@ struct Modifiers: View {
                                     .padding(), alignment: .leading
                             )
                             if isDisplaying {
-                                Text("This button uses the modifiers .overlay,\n .resizeable, .animation, and .rotationEffect")
+                                Text("This button uses the modifiers .overlay,\n .resizeable, .animation, and .rotationEffect. \nScroll to see animal list.")
                                     .foregroundColor(Color("descColor"))
-                                    .font(Font.custom("Arial-italicMT", size: 15))
+                                    .font(Font.custom("Arial-italicMT", size: 14))
                                     .padding(.all, 5)
                                     .frame(height: 75, alignment: .center)
                                 List {

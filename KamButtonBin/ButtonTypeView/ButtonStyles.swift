@@ -16,7 +16,7 @@ struct ButtonStyles: View {
     @State var showAlert4 = false
     
     var body: some View {
-        VStack(spacing: 20) {
+        VStack {
             Text("Button Styles")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
@@ -26,39 +26,41 @@ struct ButtonStyles: View {
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 14))
             Divider()
-            Button(".plain") {
-                showAlert1.toggle()
+            VStack(spacing: 20) {
+                Button(".plain") {
+                    showAlert1.toggle()
+                }
+                .buttonStyle(.plain)
+                .alert(isPresented: $showAlert1) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifier:\n .buttonStyle(.plain)"), dismissButton: .default(Text("OK")))
+                }
+                Button(".bordered") {
+                    showAlert2.toggle()
+                }
+                .buttonStyle(.bordered)
+                .alert(isPresented: $showAlert2) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifier:\n .buttonStyle(.bordered)"), dismissButton: .default(Text("OK")))
+                }
+                Button(".borderedProminent") {
+                    showAlert3.toggle()
+                }
+                .buttonStyle(.borderedProminent)
+                .alert(isPresented: $showAlert3) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifier:\n .buttonStyle(.borderedProminent)"), dismissButton: .default(Text("OK")))
+                }
+                Button {
+                    showAlert4.toggle()
+                } label: {
+                    Label("Fancy Button\n(.bordered)", systemImage: "sun.max.fill")
+                }
+                .buttonStyle(.bordered)
+                .font(Font.custom("Georgia-BoldItalic", size: 20))
+                .foregroundColor(.purple)
+                .alert(isPresented: $showAlert4) {
+                    Alert(title: Text("Message"), message: Text("This button uses the modifiers:\n .buttonStyle(.bordered),\n.foregroundColor(.purple),\n .font(Font.custom(\"Georgia-BoldItalic\", size: 20))"), dismissButton: .default(Text("OK")))
+                }
+                Spacer()
             }
-            .buttonStyle(.plain)
-            .alert(isPresented: $showAlert1) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.plain)"), dismissButton: .default(Text("OK")))
-            }
-            Button(".bordered") {
-                showAlert2.toggle()
-            }
-            .buttonStyle(.bordered)
-            .alert(isPresented: $showAlert2) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered)"), dismissButton: .default(Text("OK")))
-            }
-            Button(".borderedProminent") {
-                showAlert3.toggle()
-            }
-            .buttonStyle(.borderedProminent)
-            .alert(isPresented: $showAlert3) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.borderedProminent)"), dismissButton: .default(Text("OK")))
-            }
-            Button {
-                showAlert4.toggle()
-            } label: {
-                Label("Fancy Button\n(.bordered)", systemImage: "sun.max.fill")
-            }
-            .buttonStyle(.bordered)
-            .font(Font.custom("Georgia-BoldItalic", size: 20))
-            .foregroundColor(.purple)
-            .alert(isPresented: $showAlert4) {
-                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered), .font(Font.custom(\"Georgia-BoldItalic\", size: 20)), .foregroundColor(.purple)"), dismissButton: .default(Text("OK")))
-            }
-            Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
         

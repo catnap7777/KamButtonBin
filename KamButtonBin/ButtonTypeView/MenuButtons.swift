@@ -22,7 +22,7 @@ struct MenuButtons: View {
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 14))
             Divider()
-            VStack(spacing: 75) {
+            VStack(spacing: 65) {
                 Menu("Click to Check Weather Today") {
                     Button {
                         print("Sunny Day Today")
