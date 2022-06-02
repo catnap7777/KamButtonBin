@@ -84,7 +84,7 @@ struct DestructiveButton: View {
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 25))
                 .alert(isPresented: $showAlert5) {
-                    Alert(title: Text("Message"), message: Text("This button uses: the parameter role: .destructive and the modifiers \n.clipShape(RoundedRectangle\n(cornerRadius:  25),\n .background, .foregroundColor, .font"), dismissButton: .default(Text("OK")))
+                    Alert(title: Text("Message"), message: Text("This button uses: the parameter role: .destructive and the modifiers \n.clipShape(RoundedRectangle\n(cornerRadius:  25)),\n .background, .foregroundColor, .font"), dismissButton: .default(Text("OK")))
                 }
                 Spacer()
             }
