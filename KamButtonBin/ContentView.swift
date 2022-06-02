@@ -13,23 +13,26 @@ struct ContentView: View {
         VStack(spacing: 10.0) {
             ZStack {
                 Color(red: 155/255, green: 0/255, blue: 100/355, opacity: 0.15).ignoresSafeArea()
-    //            Color.purple
-    //                .ignoresSafeArea()
+                //            Color.purple
+                //                .ignoresSafeArea()
                 VStack {
-                    Text("Button Bin")
+                    Text("Button Boutique")
                         .foregroundColor(Color("titleColor"))
                         .padding(.horizontal, 55.0)
                         .background(Color(red: 0/255, green: 15/255, blue: 155/255, opacity: 0.25))
-                        .padding(.top, 10)
-                    .font(Font.custom("ChalkboardSE-bold", size: 45))
-                    Text("Swipe Left and Choose Your Favorite Button")
-                        .foregroundColor(Color("titleColor"))
+                        .padding(.top, 25)
+                        .font(Font.custom("ChalkboardSE-bold", size: 35))
+                    Spacer()
+                    Text("~ SwiftUI Buttons and their modifiers ~\n(swipe left to learn more)")
+                        .multilineTextAlignment(.center)
+                        .frame(height: 55)
+                        .foregroundColor(Color("descColor"))
                         .font(Font.custom("ChalkboardSE-bold", size: 15))
-                        .padding(.bottom, 10)
+                        .padding(.bottom, 15)
                     Divider()
                 }
             }
-            .frame(height: 150)
+            .frame(height: 125)
             TabView {
                 ButtonStyles(buttonModel: buttonModel, buttonTypeInd: ButtonType.buttonStyles.rawValue)
                     .tabItem {

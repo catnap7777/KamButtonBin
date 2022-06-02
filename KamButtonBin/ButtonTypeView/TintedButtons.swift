@@ -15,12 +15,12 @@ struct TintedButtons: View {
             Text("Tinted Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
-                .padding(.bottom, 15)
+                .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))
             Button(action: {}, label: {
-                Label("Tinted Button1", systemImage: "applelogo")
+                Label("Tinted Button", systemImage: "applelogo")
                     .padding(.all, 5)
                     .foregroundColor(.pink)
             })
@@ -28,7 +28,7 @@ struct TintedButtons: View {
             .buttonBorderShape(.capsule)
             .tint(.pink)
             Button(action: {}, label: {
-                Label("Tinted Button2", systemImage: "gamecontroller.fill")
+                Label("Tinted Button", systemImage: "gamecontroller.fill")
                     .padding(.all, 5)
                     .foregroundColor(.orange)
             })
@@ -36,7 +36,7 @@ struct TintedButtons: View {
             .buttonBorderShape(.roundedRectangle(radius: 10))
             .tint(.teal)
             Button(action: {}, label: {
-                Label("Tinted Button3", systemImage: "sun.max.fill")
+                Label("Tinted Button", systemImage: "sun.max.fill")
                     .padding(.all, 5)
                     .font(Font.custom("ChalkboardSE-bold", size: 18))
             })
@@ -44,7 +44,7 @@ struct TintedButtons: View {
             .buttonBorderShape(.roundedRectangle(radius: 10))
             .tint(.yellow)
             Button(action: {}, label: {
-                Label("Tinted Button4", systemImage: "ladybug")
+                Label("Tinted Button", systemImage: "ladybug")
                     .padding(.all, 5)
                     .font(Font.custom("ChalkboardSE-bold", size: 18))
             })

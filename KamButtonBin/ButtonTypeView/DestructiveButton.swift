@@ -15,7 +15,7 @@ struct DestructiveButton: View {
             Text("Destructive Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
-                .padding(.bottom, 15)
+                .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))

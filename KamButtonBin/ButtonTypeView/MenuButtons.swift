@@ -16,7 +16,7 @@ struct MenuButtons: View {
             Text("Menu Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
-                .padding(.bottom, 15)
+                .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))
@@ -60,11 +60,11 @@ struct MenuButtons: View {
                 Label("Delete", systemImage: "trash")
               }
             } label: {
-              Label("Options", systemImage: "pencil.circle")
+              Label("Click for Options", systemImage: "pencil.circle")
                 .font(Font.custom("GillSans-UltraBold", size: 25))
                 .foregroundColor(.green)
             }
-            Menu("Submenus") {
+            Menu("Click for Submenu") {
               Menu("Submenu") {
                 Button("Copy Format", action: {print("copy")})
                 Button("Paste Format", action: {print("paste")})

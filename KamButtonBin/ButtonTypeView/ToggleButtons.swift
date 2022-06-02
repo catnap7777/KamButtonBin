@@ -18,8 +18,8 @@ struct ToggleButtons: View {
         VStack(spacing: 20) {
             Text("Toggle Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
-                .foregroundColor(Color("titleColor"))
-                .padding(.bottom, 15)
+                .foregroundColor(Color("subTitleColor"))
+                .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))

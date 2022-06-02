@@ -69,12 +69,12 @@ struct ButtonModel {
     ButtonItem(
       id: 6,
       type: .toggled,
-      description: "Toggle buttons can be used in a variety of ways. They allow the user to make a choice between various options",
+      description: "Toggle buttons can be used in a variety of ways. They allow the user to make a choice between various options. Click below to see some toggle button examples.",
       picture: "toggle"),
     ButtonItem(
       id: 7,
       type: .menu,
-      description: "Menu buttons allow the user to choose an option based on a menu of choices that pops up. ",
+      description: "Menu buttons allow the user to choose an option based on a menu of choices that pops up. Click below to see some toggle button examples.",
       picture: "menu"),
     ButtonItem(
       id: 8,

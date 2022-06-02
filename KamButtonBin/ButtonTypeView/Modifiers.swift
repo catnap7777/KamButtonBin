@@ -11,72 +11,97 @@ struct Modifiers: View {
     var buttonModel: ButtonModel
     var buttonTypeInd: Int = ButtonType.modifiers.rawValue
     @State var isDisplaying = false
+    @State var showAlert1 = false
+    @State var showAlert2 = false
+    
     var body: some View {
-        VStack(spacing: 30) {
-            Text("More Modifiers")
-                .font(Font.custom("ChalkboardSE-bold", size: 25))
-                .foregroundColor(Color("subTitleColor"))
-                .padding(.bottom, 15)
-            Text("\((buttonModel.buttons[buttonTypeInd]).description)")
-                .padding(.horizontal, 25)
-                .font(Font.custom("Arial-italicMT", size: 15))
-            Button(action: {}, label: {
-                Label("More Modifiers", systemImage: "applelogo")
-                    .padding(.all, 20)
-                    .foregroundColor(.white)
-                    .background(Color(.red))
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-                    .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.purple, lineWidth: 5))
-            })
-            Button(action: {}, label: {
-                Image("swift")
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.purple, lineWidth: 5))
-                    .shadow(color: .teal, radius: 55, x: 25, y: 25)
-            })
-            Button {
-                self.isDisplaying.toggle()
-            } label: {
-                VStack {
-                    HStack {
-                        Text("Displaying Rotating Button")
-                            .font(Font.custom("ChalkboardSE-bold", size: 18))
-                            .frame(width: 325, height: 45, alignment: .trailing)
-                            .padding(.trailing, 10)
+        ScrollView {
+            VStack {
+                
+                Text("More Modifiers")
+                    .font(Font.custom("ChalkboardSE-bold", size: 25))
+                    .foregroundColor(Color("subTitleColor"))
+                    .padding(.vertical, 5)
+                Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+                    .padding(.horizontal, 25)
+                    .font(Font.custom("Arial-italicMT", size: 15))
+                    .padding(.bottom, 15)
+                VStack(spacing: 25) {
+                    Button(action: {
+                        showAlert1.toggle()
+                    }, label: {
+                        Label("More Modifiers", systemImage: "applelogo")
+                            .padding(.all, 20)
                             .foregroundColor(.white)
-                            .background(.indigo)
+                            .background(Color(.red))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.purple, lineWidth: 5))
+                    })
+                    .alert(isPresented: $showAlert1) {
+                        Alert(title: Text("Message"), message: Text("This button uses the modifiers:\n.padding, .foregroundColor, \n.background, .clipShape, .overlay, and .stroke"), dismissButton: .default(Text("OK")))
                     }
-                    .overlay(
-                        Image(systemName: "chevron.up.square")
+                    Button(action: {
+                        showAlert2.toggle()
+                    }, label: {
+                        Image("swift")
                             .resizable()
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(isDisplaying != true ? .white : .pink)
-                            .rotationEffect(isDisplaying ? Angle(degrees: 0.0) : Angle(degrees: 180.0))
-                            .animation(.easeInOut, value: 0.5)
-                            .controlSize(.large)
-                            .padding(), alignment: .leading
-                    )
-                    if isDisplaying {
-                        List {
-                            Text("Cat")
-                            Text("Dog")
-                            Text("Bunny")
-                            Text("Goldfish")
-                            Text("Hamster")
-                            Text("Guinea Pig")
-                            Text("Bird")
-                       }
-                        .layoutPriority(isDisplaying ? 0.5 : 1.0)
-                        .animation(.spring(), value: 0.0)
-                        Spacer()
+                            .frame(width: 100, height: 100)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.purple, lineWidth: 5))
+                            .shadow(color: .teal, radius: 55, x: 25, y: 25)
+                    })
+                    .alert(isPresented: $showAlert2) {
+                        Alert(title: Text("Message"), message: Text("This button uses an image and the modifiers:\n.resizeable, .frame, \n.clipShape, .overlay, .stroke, and .shadow"), dismissButton: .default(Text("OK")))
+                    }
+                    Button {
+                        self.isDisplaying.toggle()
+                    } label: {
+                        VStack {
+                            HStack {
+                                Text("<- Displaying Rotating Button")
+                                    .font(Font.custom("ChalkboardSE-bold", size: 18))
+                                    .frame(width: 325, height: 45, alignment: .trailing)
+                                    .padding(.trailing, 10)
+                                    .foregroundColor(.white)
+                                    .background(.indigo)
+                            }
+                            .overlay(
+                                Image(systemName: "chevron.up.square")
+                                    .resizable()
+                                    .frame(width: 25, height: 25)
+                                    .foregroundColor(isDisplaying != true ? .white : .pink)
+                                    .rotationEffect(isDisplaying ? Angle(degrees: 0.0) : Angle(degrees: 180.0))
+                                    .animation(.easeInOut, value: 0.5)
+                                    .controlSize(.large)
+                                    .padding(), alignment: .leading
+                            )
+                            if isDisplaying {
+                                Text("This button uses the modifiers .overlay,\n .resizeable, .animation, and .rotationEffect")
+                                    .foregroundColor(Color("descColor"))
+                                    .font(Font.custom("Arial-italicMT", size: 15))
+                                    .padding(.all, 5)
+                                    .frame(height: 75, alignment: .center)
+                                List {
+                                    Text("Cat")
+                                    Text("Dog")
+                                    Text("Bunny")
+                                    Text("Goldfish")
+                                    Text("Hamster")
+                                    Text("Guinea Pig")
+                                    Text("Bird")
+                                }
+                                .layoutPriority(isDisplaying ? 0.5 : 1.0)
+                                .animation(.spring(), value: 0.0)
+                                //Spacer()
+                            }
+                        }
                     }
                 }
+                Spacer()
             }
-            Spacer()
-        }
-        .navigationBarTitleDisplayMode(.inline)
+            .frame(height: 1500)
+            .navigationBarTitleDisplayMode(.inline)
+        } //end ScrollView
     }
     
 }

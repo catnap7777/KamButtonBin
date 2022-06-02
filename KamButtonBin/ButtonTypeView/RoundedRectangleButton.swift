@@ -10,17 +10,19 @@ import SwiftUI
 struct RoundedRectangleButton: View {
     var buttonModel: ButtonModel
     var buttonTypeInd: Int = ButtonType.roundedRectangles.rawValue
+    @State var showAlert1 = false
+    @State var showAlert2 = false
     var body: some View {
         VStack(spacing: 20) {
             Text("Rounded Rectangles")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
-                .padding(.bottom, 15)
+                .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))
             Button {
-                // code
+                showAlert1.toggle()
             } label: {
                 Text("Rounded Rectangle\n(.bordered)")
                     .padding(.all, 5)
@@ -29,14 +31,20 @@ struct RoundedRectangleButton: View {
             }
             .buttonStyle(.bordered)
             .buttonBorderShape(.roundedRectangle(radius: 15))
+            .alert(isPresented: $showAlert1) {
+                Alert(title: Text("Message"), message: Text(" .buttonBorderShape with .roundedRectangle(radius: 15) modifier used."), dismissButton: .default(Text("OK")))
+            }
             Button("Rounded Rectangle\n(.borderedProminent)") {
-                // code
+                showAlert2.toggle()
             }
             .padding(.all, 10)
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.roundedRectangle(radius: 10))
             .foregroundColor(.white)
             .font(Font.custom("ChalkboardSE-bold", size: 18))
+            .alert(isPresented: $showAlert2) {
+                Alert(title: Text("Message"), message: Text(".borderedProminent) and  .buttonBorderShape with .roundedRectangle(radius: 15) modifier used."), dismissButton: .default(Text("OK")))
+            }
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)

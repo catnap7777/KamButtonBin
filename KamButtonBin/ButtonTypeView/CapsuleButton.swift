@@ -10,17 +10,20 @@ import SwiftUI
 struct CapsuleButton: View {
     var buttonModel: ButtonModel
     var buttonTypeInd: Int = ButtonType.capsule.rawValue
+    @State var showAlert1 = false
+    @State var showAlert2 = false
+    @State var showAlert3 = false
     var body: some View {
         VStack(spacing: 20) {
             Text("Capsule Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
-                .padding(.bottom, 15)
+                .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
                 .padding(.horizontal, 25)
                 .font(Font.custom("Arial-italicMT", size: 15))
             Button {
-                // code
+                showAlert1.toggle()
             } label: {
                 Text("Capsule Button")
                     .padding(.all, 10)
@@ -29,8 +32,11 @@ struct CapsuleButton: View {
             }
             .buttonStyle(.borderedProminent)
             .buttonBorderShape(.capsule)
+            .alert(isPresented: $showAlert1) {
+                Alert(title: Text("Message"), message: Text(".buttonStyle(.borderedProminent)\n and .buttonBorderShape(.capsule) modifier used."), dismissButton: .default(Text("OK")))
+            }
             Button {
-                // code
+                showAlert2.toggle()
             } label: {
                 Text("Capsule Button")
                     .padding(.all, 10)
@@ -39,8 +45,11 @@ struct CapsuleButton: View {
             .buttonStyle(.bordered)
             .buttonBorderShape(.capsule)
             .tint(.purple)
+            .alert(isPresented: $showAlert2) {
+                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered),\n .buttonBorderShape(.capsule), and .tint(.purple) modifier used."), dismissButton: .default(Text("OK")))
+            }
             Button {
-                // code
+                showAlert3.toggle()
             } label: {
                 Text("Capsule Button")
                     .font(Font.custom("ChalkboardSE-bold", size: 18))
@@ -49,6 +58,9 @@ struct CapsuleButton: View {
             .buttonBorderShape(.capsule)
             .controlSize(.small)
             .tint(.teal)
+            .alert(isPresented: $showAlert3) {
+                Alert(title: Text("Message"), message: Text(".buttonStyle(.bordered),\n .buttonBorderShape(.capsule),\n .controlSize(.small), and\n .tint(.teal) modifier used."), dismissButton: .default(Text("OK")))
+            }
             Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
