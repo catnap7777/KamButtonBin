@@ -23,7 +23,6 @@
 		3A7FEF2A282B4D5A00701B42 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FEF29282B4D5A00701B42 /* Modifiers.swift */; };
 		3A7FEF2C282B4D7300701B42 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FEF2B282B4D7300701B42 /* CustomButtons.swift */; };
 		3A7FEF2E282B559100701B42 /* FontNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7FEF2D282B559100701B42 /* FontNames.swift */; };
-		3A96DD242849039400F11DC6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A96DD232849039400F11DC6 /* Home.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +43,6 @@
 		3A7FEF29282B4D5A00701B42 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		3A7FEF2B282B4D7300701B42 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		3A7FEF2D282B559100701B42 /* FontNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontNames.swift; sourceTree = "<group>"; };
-		3A96DD232849039400F11DC6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 		3A7FEF18282B4BE400701B42 /* ButtonTypeView */ = {
 			isa = PBXGroup;
 			children = (
-				3A96DD232849039400F11DC6 /* Home.swift */,
 				3A7FEF19282B4C0500701B42 /* ButtonStyles.swift */,
 				3A7FEF1B282B4C2000701B42 /* RoundedRectangleButton.swift */,
 				3A7FEF1D282B4C4100701B42 /* CapsuleButton.swift */,
@@ -191,7 +188,6 @@
 				3A7FEF2A282B4D5A00701B42 /* Modifiers.swift in Sources */,
 				3A7FEF2E282B559100701B42 /* FontNames.swift in Sources */,
 				3A7FEF22282B4C8500701B42 /* ControlSizedButtons.swift in Sources */,
-				3A96DD242849039400F11DC6 /* Home.swift in Sources */,
 				3A7FEF1A282B4C0500701B42 /* ButtonStyles.swift in Sources */,
 				3A7FEF24282B4C9400701B42 /* TintedButtons.swift in Sources */,
 				3A7FEF20282B4C5400701B42 /* DestructiveButton.swift in Sources */,
