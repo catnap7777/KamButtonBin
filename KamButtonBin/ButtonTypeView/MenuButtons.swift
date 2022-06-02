@@ -12,70 +12,74 @@ struct MenuButtons: View {
     var buttonTypeInd: Int = ButtonType.menu.rawValue
     @State var message = ""
     var body: some View {
-        VStack(spacing: 50) {
+        VStack(spacing: 20) {
             Text("Menu Buttons")
                 .font(Font.custom("ChalkboardSE-bold", size: 25))
                 .foregroundColor(Color("subTitleColor"))
                 .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 25)
-                .font(Font.custom("Arial-italicMT", size: 15))
-            Menu("Click to Check Weather Today") {
-                Button {
-                    print("Sunny Day Today")
-                } label: {
-                    Label("Sunny Day", systemImage: "sun.max.fill")
+                .font(Font.custom("Arial-italicMT", size: 14))
+            Divider()
+            VStack(spacing: 75) {
+                Menu("Click to Check Weather Today") {
+                    Button {
+                        print("Sunny Day Today")
+                    } label: {
+                        Label("Sunny Day", systemImage: "sun.max.fill")
+                    }
+                    Button {
+                        print("Cloudy Day Today")
+                    } label: {
+                        Label("Cloudy Day", systemImage: "cloud.fill")
+                    }
+                    Button {
+                        print("Rainy Day Today")
+                    } label: {
+                        Label("Rainy Day", systemImage: "cloud.rain")
+                    }
                 }
-                Button {
-                    print("Cloudy Day Today")
+                .padding(.top, 10)
+                .padding(.horizontal, 35)
+                .foregroundColor(.white)
+                .font(Font.custom("SavoyeLetPlain", size: 30))
+                .background(.indigo)
+                .clipShape(RoundedRectangle(cornerRadius: 25))
+                Menu {
+                    Button(action: {
+                        message = "Open chosen"
+                    }) {
+                        Label("Open", systemImage: "book")
+                    }
+                    Button(action: {
+                        message = "Find chosen"
+                    }) {
+                        Label("Find", systemImage: "magnifyingglass")
+                    }
+                    Button(action: {
+                        message = "Delete chosen"
+                    }) {
+                        Label("Delete", systemImage: "trash")
+                    }
                 } label: {
-                    Label("Cloudy Day", systemImage: "cloud.fill")
+                    Label("Click for Options", systemImage: "pencil.circle")
+                        .font(Font.custom("GillSans-UltraBold", size: 25))
+                        .foregroundColor(.green)
                 }
-                Button {
-                    print("Rainy Day Today")
-                } label: {
-                    Label("Rainy Day", systemImage: "cloud.rain")
+                Menu("Click for Submenu") {
+                    Menu("Submenu") {
+                        Button("Copy Format", action: {print("copy")})
+                        Button("Paste Format", action: {print("paste")})
+                    }
+                    Button("Delete...", action: {print("delete")})
+                    Button("Find", action: {print("find")})
+                    Button("Open ", action: {print("open")})
                 }
-            }
-            .padding(.top, 10)
-            .padding(.horizontal, 35)
-            .foregroundColor(.white)
-            .font(Font.custom("SavoyeLetPlain", size: 30))
-            .background(.indigo)
-            .clipShape(RoundedRectangle(cornerRadius: 25))
-            Menu {
-              Button(action: {
-                message = "Open chosen"
-              }) {
-                Label("Open", systemImage: "book")
-              }
-              Button(action: {
-                message = "Find chosen"
-              }) {
-                Label("Find", systemImage: "magnifyingglass")
-              }
-              Button(action: {
-                message = "Delete chosen"
-              }) {
-                Label("Delete", systemImage: "trash")
-              }
-            } label: {
-              Label("Click for Options", systemImage: "pencil.circle")
+                .foregroundColor(.cyan)
                 .font(Font.custom("GillSans-UltraBold", size: 25))
-                .foregroundColor(.green)
+                Spacer()
             }
-            Menu("Click for Submenu") {
-              Menu("Submenu") {
-                Button("Copy Format", action: {print("copy")})
-                Button("Paste Format", action: {print("paste")})
-              }
-              Button("Delete...", action: {print("delete")})
-              Button("Find", action: {print("find")})
-              Button("Open ", action: {print("open")})
-            }
-            .foregroundColor(.cyan)
-            .font(Font.custom("GillSans-UltraBold", size: 25))
-            Spacer()
         }
         .navigationBarTitleDisplayMode(.inline)
     }

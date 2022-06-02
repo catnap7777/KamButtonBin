@@ -21,8 +21,10 @@ struct ToggleButtons: View {
                 .foregroundColor(Color("subTitleColor"))
                 .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 25)
-                .font(Font.custom("Arial-italicMT", size: 15))
+                .font(Font.custom("Arial-italicMT", size: 14))
+            Divider()
             VStack(spacing: 45) {
                 VStack(spacing: 12) {
                     Toggle("Toggle Button", isOn: $isSunnyToday1)

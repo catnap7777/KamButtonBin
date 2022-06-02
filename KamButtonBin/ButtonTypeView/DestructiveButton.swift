@@ -22,8 +22,10 @@ struct DestructiveButton: View {
                 .foregroundColor(Color("subTitleColor"))
                 .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 25)
-                .font(Font.custom("Arial-italicMT", size: 15))
+                .font(Font.custom("Arial-italicMT", size: 14))
+            Divider()
             Button(role: .destructive) {
                 showAlert1.toggle()
             } label: {

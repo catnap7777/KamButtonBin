@@ -40,8 +40,10 @@ struct CustomButtons: View {
                 .foregroundColor(Color("subTitleColor"))
                 .padding(.vertical, 15)
             Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+                .multilineTextAlignment(.center)
                 .padding(.horizontal, 25)
-                .font(Font.custom("Arial-italicMT", size: 15))
+                .font(Font.custom("Arial-italicMT", size: 14))
+            Divider()
             //***********************************
             Button("Custom Button") {
                 print("Here's my custom button1")
@@ -59,7 +61,7 @@ struct CustomButtons: View {
                     .fill(AngularGradient(colors: [.purple, .blue, .black, .purple, .blue, .black, .purple], center: .center))
                     .frame(width: 250, height: 55)
                     .overlay {
-                        Text("Custom Button2")
+                        Text("Custom Button")
                             .foregroundColor(.white)
                             .font(.body)
                             .fontWeight(.bold)
@@ -76,7 +78,7 @@ struct CustomButtons: View {
                     .fill(RadialGradient(gradient: Gradient(colors: [.blue, .yellow]), center: .top, startRadius: 10, endRadius: 65))
                     .frame(width: 250, height: 55)
                     .overlay {
-                        Text("Custom Button3")
+                        Text("Custom Button")
                             .foregroundColor(.white)
                             .font(.body)
                             .fontWeight(.bold)
@@ -91,7 +93,7 @@ struct CustomButtons: View {
                 print("Here's my custom button4")
                 showAlert4.toggle()
             } label: {
-                Label("Custom Button4", systemImage: "applelogo")
+                Label("Custom Button", systemImage: "applelogo")
             }
             .buttonStyle(CustomButton())
             .shadow(color: .yellow, radius: 25, x: 15, y: 15)

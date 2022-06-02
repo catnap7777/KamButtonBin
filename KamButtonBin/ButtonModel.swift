@@ -39,12 +39,12 @@ struct ButtonModel {
     ButtonItem(
       id: 0,
       type: .buttonStyles,
-      description: "New button styles introduced in iOS15",
+      description: "The new button styles introduced in iOS15 make it easy to define buttons that are consistent throughout an app. Instead of having to code more complex custom buttons, these buttons styles are easily implemented through modifiers.",
       picture: "buttonstyles"),
     ButtonItem(
       id: 1,
       type: .roundedRectangles,
-      description: "Rounded rectangle buttons are easy to create using the .buttonBorderShape modifier along with a radius for the corner such as .buttonBorderShape(.roundedRectangle(radius: 15)).",
+      description: "Rounded rectangle buttons are easy to create using the .buttonBorderShape modifier along with a radius parameter for the corner arc of the button. Example:\n .buttonBorderShape(.roundedRectangle(radius: 15)).",
       picture: "roundedrectangle"),
     ButtonItem(
       id: 2,
@@ -54,7 +54,7 @@ struct ButtonModel {
     ButtonItem(
       id: 3,
       type: .destructive,
-      description: "Destructive buttons are easily defined by using the role: parameter when defining the button such as Button(role: .destructive). The .buttonSyle, .buttonborderShape, and .tint modifiers can also be used to further style the button.",
+      description: "Destructive buttons are easily defined by using the role: parameter when defining the button. \nExample: Button(role: .destructive). \nThe .buttonSyle, .buttonborderShape, and .tint modifiers can also be used to further style the button.",
       picture: "destructive"),
     ButtonItem(
       id: 4,
@@ -64,7 +64,7 @@ struct ButtonModel {
     ButtonItem(
       id: 5,
       type: .tinted,
-      description: "Tinted buttons can be created by using the .tint modifier.  The color for the tint is used for the button text and the background is the same color but with 50% opacity.",
+      description: "Tinted buttons can be created by using the .tint modifier.  The color specified for the tint is used for the button text and the button background is the same color but with 50% opacity.",
       picture: "tinted"),
     ButtonItem(
       id: 6,
@@ -74,17 +74,17 @@ struct ButtonModel {
     ButtonItem(
       id: 7,
       type: .menu,
-      description: "Menu buttons allow the user to choose an option based on a menu of choices that pops up. Click below to see some toggle button examples.",
+      description: "Menu buttons allow the user to choose an option based on a menu of choices that pops up. Click below to see some menu button examples.",
       picture: "menu"),
     ButtonItem(
       id: 8,
       type: .modifiers,
-      description: "There are many other modifiers that can be used with buttons such as .clipShape, .overlay, .shadow, .animation, and .rotationEffect to name a few.",
+      description: "There are many other modifiers that can be used with buttons. Examples include, .clipShape, .overlay, .shadow, .animation, and .rotationEffect to name a few. Click below and scroll to see some of these examples.",
       picture: "modifiers"),
     ButtonItem(
       id: 9,
       type: .custom,
-      description: "Custom buttons using different color gradients and other options are easily defined by creating a custom Class of type ButtonStyle that returns a view that's created by calling the makeBody function that sets up a custom configuration for the button.",
+      description: "Custom buttons that use different color gradients and other options are easily defined by creating a custom Class (of type ButtonStyle) that returns a view that's created by calling the makeBody function to set up a custom configuration for the button.",
       picture: "custom")
   ]
 }

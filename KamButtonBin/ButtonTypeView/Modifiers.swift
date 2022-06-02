@@ -23,9 +23,11 @@ struct Modifiers: View {
                     .foregroundColor(Color("subTitleColor"))
                     .padding(.vertical, 5)
                 Text("\((buttonModel.buttons[buttonTypeInd]).description)")
+                    .multilineTextAlignment(.center)
                     .padding(.horizontal, 25)
-                    .font(Font.custom("Arial-italicMT", size: 15))
+                    .font(Font.custom("Arial-italicMT", size: 14))
                     .padding(.bottom, 15)
+                Divider()
                 VStack(spacing: 25) {
                     Button(action: {
                         showAlert1.toggle()
